@@ -269,6 +269,11 @@ namespace ti
             [tile setBadgeLabel:@""];
         }
     }
+    
+    void OSXUIBinding::SetNotify()
+    {
+        [NSApp requestUserAttention:NSCriticalRequest];
+    }
 
     void OSXUIBinding::SetBadgeImage(std::string& badgePath)
     {

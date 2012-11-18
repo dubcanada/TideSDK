@@ -63,6 +63,7 @@ namespace ti
         virtual void SetDockIcon(std::string& iconPath);
         virtual void SetBadge(std::string& badgeLabel);
         virtual void SetBadgeImage(std::string& badgeImage);
+        void SetNotify();
 
         AutoPtr<OSXMenu> GetActiveMenu();
         void WindowFocused(AutoPtr<OSXUserWindow> window);

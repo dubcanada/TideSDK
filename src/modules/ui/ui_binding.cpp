@@ -68,6 +68,7 @@ namespace ti
         this->SetMethod("getWindows", &UIBinding::_GetOpenWindows);
         this->SetMethod("getMainWindow", &UIBinding::_GetMainWindow);
         this->SetMethod("createWindow", &UIBinding::_CreateWindow);
+        this->SetMethod("setNotify", &UIBinding::_SetNotify);
 
         // Initialize notifications
         this->SetBool("nativeNotifications", Notification::InitializeImpl());
@@ -401,6 +402,11 @@ namespace ti
         ValueRef result)
     {
         result->SetDouble(this->GetIdleTime());
+    }
+    
+    void UIBinding::_SetNotify(const ValueList& args, ValueRef result)
+    {
+        this->SetNotify();
     }
 
     void UIBinding::Log(Logger::Level level, std::string& message)

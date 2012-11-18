@@ -104,6 +104,9 @@ namespace ti
 
         static void ErrorDialog(std::string);
         static inline UIBinding* GetInstance() { return instance; }
+        
+        virtual void SetNotify() = 0;
+        void _SetNotify(const ValueList& args, ValueRef result);
 
     protected:
         static UIBinding* instance;
